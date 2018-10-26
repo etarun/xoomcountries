@@ -23,5 +23,7 @@ public class MainActivityContract {
     public interface Presenter {
 
         void onCreate(Map<String, String> favCountries);
+
+        void getCountriesList(int page, int pageSize, Map<String, String> favCountries);
     }
 }

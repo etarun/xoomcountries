@@ -36,7 +36,7 @@ public class MainActivityPresenter implements MainActivityContract.Presenter {
         getCountriesList(1, 50, favCountries);
     }
 
-    private void getCountriesList(int page, int pageSize, Map<String, String> favCountries) {
+    public void getCountriesList(int page, int pageSize, Map<String, String> favCountries) {
         Observable<List<XoomCountry>> countriesData = repository.getCountriesList(page, pageSize, favCountries);
         countriesData.subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
